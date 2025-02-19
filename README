@@ -1,5 +1,4 @@
-This repo contains some basic examples of using Crossplane via a Kind cluster. It uses the Crossplane AWS provider to provision an EC2 Instance via Localstack installed on Kubernetes. This is done to save potential costs on a live AWS account. Costs should be minimal if you decide
-to run it live.
+This repo contains some basic examples of using Crossplane via a Kind cluster. It uses the Crossplane AWS provider to provision an EC2 Instance via Localstack installed on Kubernetes. This is done to save potential costs on a live AWS account. Costs should be minimal if you decide to run it live.
 
 This demo assumes you've installed Kind and Helm. This could be placed into a container to prevent helm from add/removing live repos. The startup and shutdown scripts add and removed the Helm repos as needed. Any Kubernetes distribution should work fine and it really
 doesn't matter how you install the other components before running any scripts. The scripts assume that all binaries are available from the current
