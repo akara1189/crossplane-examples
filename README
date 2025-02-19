@@ -1,0 +1,23 @@
+This repo contains some basic examples of using Crossplane via a Kind cluster. It uses the Crossplane AWS provider to provision EC2 instances 
+and an S3 bucket via a Localstack container. This is done to save potential costs on a live AWS account. Costs should be minimal if you decide
+to run it live.
+
+This demo assumes you've install Kind, Localstack, Helm and the Crossplane Helm repo. Any Kubernetes distribution should work fine and it really
+doesn't matter how you install the other components before running any scripts. The scripts assume that all binaries are available from the current
+user shell/context, via a PATH environmental variable, etc... - Change the paths in the scripts if necessary!
+
+startup.sh: Startup script. Creates Kind cluster, starts localstack container and installs Crossplane to Kind.
+
+shutdown.sh: Shutdown script. Doesn't do much. Shuts down localstack container and destroy kind cluster. 
+
+kind-config.yaml: Contains Kind config for test cluster.
+
+shell_functions.sh: BASH script file designed to be sourced by other scripts. Not doing much at the moment.
+
+providers/: Contains YAML config files for Crossplane Providers and ProviderConfigs being used.
+
+claims/: Contains YAML config files for Crossplane Claims being used.
+
+XRDs/: Contains YAML config files for Composite Resource Definitions being used.
+
+compositions/: Contains YALM config files for Compositions being used.

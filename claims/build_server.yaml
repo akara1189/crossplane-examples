@@ -1,0 +1,7 @@
+apiVersion: example.org/v1alpha1
+kind: BuildServer
+metadata:
+  name: test-build-server
+  namespace: default
+spec:
+  instance-type: "m5.large"

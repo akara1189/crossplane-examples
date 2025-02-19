@@ -1,0 +1,31 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: build-server-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XBuildServer
+  mode: Pipeline
+  pipeline:
+  - step: patch-and-transform
+    functionRef:
+      name: function-patch-and-transform
+    input:
+      apiVersion: pt.fn.crossplane.io/v1beta1
+      kind: Resources
+      resources:
+      - name: instance
+        base:
+          apiVersion: ec2.aws.crossplane.io/v1alpha1
+          kind: Instance
+          spec:
+            forProvider:
+              imageId: ami-073d2c3aa43ed04b4
+              region: us-east-1
+            providerConfigRef:
+              name: example
+        patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.instance-type
+          toFieldPath: spec.forProvider.instanceType
