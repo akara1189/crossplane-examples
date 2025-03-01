@@ -4,6 +4,8 @@ This demo assumes you've installed Kind and Helm. This could be placed into a co
 doesn't matter how you install the other components before running any scripts. The scripts assume that all binaries are available from the current
 user shell/context, via a PATH environmental variable, etc... - Change the paths in the scripts if necessary!
 
+YouTube demo located here: https://www.youtube.com/watch?v=NQL-C0H1Pro
+
 startup.sh: Startup script. Creates Kind cluster, installs Helm repos and installs Crossplane and Localstack to Kind.
 
 shutdown.sh: Shutdown script. Destroys Kind cluster and removed Helm repos. 
